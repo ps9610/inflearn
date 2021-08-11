@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            //forEach
+            /* function forEach(predicate, thisArg){
+              for(let i=0; i<a.length;i++){
+                  predicate(a[i], i)
+              }
+          }
+
+          a = [10, 11, 12, 13, 14, 15];
+          a.forEach((v, i)=>console.log(v,i)); */
+
+          //map
+            /* function map(predicate, thisArg){
+              let list = [];
+              for(let i=0; i<a.length; i++){
+                  list.push(predicate(a[i], i));
+              }
+              return list;
+          }
+
+          a = [10, 11, 12, 13, 14, 15];
+
+          let answer = a.map((v,i)=>v*v);
+          console.log(answer); */
+
+         //filter
+            /* function filter(predicate, thisArg){
+              let list = [];
+              for(let i=0; i<a.length; i++){
+                  if(predicate(a[i], i)) list.push(a[i]);
+              }
+              return list;
+          }
+
+          a = [10, 11, 12, 13, 14, 15];
+
+          let answer = a.filter((v,i)=>v%2===0);
+          console.log(answer); */
+
+          //reduce
+           function reduce(predicate, val){
+              let result = val;
+              for(let i=0; i<a.length; i++){
+                  result = predicate(result, a[i]);
+              }
+              return result;
+          }
+
+          a = [1, 2, 3, 4, 5];
+
+          let answer = a.reduce((acc,v=>acc+v), 0);
+          console.log(answer);
+          
+        </script>
+    </body>
+</html>
