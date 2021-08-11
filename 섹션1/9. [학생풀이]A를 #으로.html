@@ -5,14 +5,27 @@
     </head>
     <body>
         <script>
-            function solution(s){
-                let answer = s;
+             function solution(s){
+                let answer = "";
+               for(let result of s){
+                result.includes("A") ? answer+="#" : answer+=result;
+               }
                 
                 return answer;
             }
             
             let str="BANANA";
-            console.log(solution(str));
+            console.log(solution(str)); 
+
+            /* function solution(s){
+                let answer = s;
+                answer = answer.replace(/A/g, "#"); // g를 넣어야 global, 전체가 바뀜
+                
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str)); */
         </script>
     </body>
 </html>
