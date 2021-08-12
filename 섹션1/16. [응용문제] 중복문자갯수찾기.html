@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){ 
+                //주어진 단어 s 안에 k가 몇 개 있는지 찾아야함.
+                let answer = 0;
+                let searchK = s.indexOf("k");
+                while(searchK != -1){
+                    answer++;
+                    searchK = s.indexOf("k", searchK+1);
+                }
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
