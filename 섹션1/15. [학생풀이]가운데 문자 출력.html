@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let sIndex = Math.floor(s.length/2);
+                //console.log(sIndex)
+                if(s.length%2===1) return ( s[sIndex] );
+                else return ( s[sIndex-1] + s[sIndex] )
+                
+            }
+            console.log(solution("good"));
+        </script>
+    </body>
+</html>

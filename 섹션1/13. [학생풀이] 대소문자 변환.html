@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer="";
+                const upper = /[A-Z]/;
+                for(let i=0;i<s.length;i++){
+                    if(s[i].search(upper)===0)answer+=s[i].toLowerCase();
+                    if(s[i].search(upper)===-1)answer+=s[i].toUpperCase();
+                }
+                return answer;
+            }
+
+            console.log(solution("StuDY"));
+        </script>
+    </body>
+</html>
