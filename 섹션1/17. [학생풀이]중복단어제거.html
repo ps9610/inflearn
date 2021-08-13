@@ -7,9 +7,7 @@
         <script>
             function solution(s){  
                 let answer; 
-                answer= s.filter( (a, idx) => {
-                    if(s.indexOf(a)===idx) return true
-                } );
+                answer= s.filter( (a, idx) => s.indexOf(a)===idx );
 /*                 for(let i=0; i<s.length; i++){
                     if(i===s.indexOf(s[i]))answer.push(s[i])  
                 } */
