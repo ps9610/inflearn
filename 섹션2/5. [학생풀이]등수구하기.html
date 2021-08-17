@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                const answer = [];
+                for(let i=0;i<arr.length;i++){
+                    let rank = 1;
+                    for(let j=0;j<arr.length;j++){
+                        if(arr[i]<arr[j]) rank++;
+                    }
+                    answer.push(rank);
+                }
+                return answer;
+            }
+            //arr를 복사해서 큰 수대로 정렬 = 배열 copy
+            //그 후, arr에 for문을 걸어 copy[i]번째 요소가 arr에선 몇 번째 index인지 구하면 됨.
+            let arr=[92, 92, 92, 100, 76];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
