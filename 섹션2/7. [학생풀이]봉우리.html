@@ -6,21 +6,28 @@
     <body>
         <script>
             function solution(arr){  
-                let answer = i = j =0;
-                let initX = [-1, 0, 1, 0];
-                let initY = [0, 1, 0, -1];
+                let answer = 0;
+                let initRow = [-1, 0, 1, 0];
+                let initCol = [0, 1, 0, -1];
                 for(let i=0;i<arr.length;i++){
                     for(let j=0;j<arr.length;j++){
-                        let toggle = 1;
-                        for(let k=0;k<initX.length;k++){
-                            let r = i + initX[k];
-                            let c = j + initY[k];
-                            if(r>=0 && r<arr.length && c>=0 && c<arr.length && arr[r][c]>=arr[i][j]){
-                                toggle=0;
-                                break;
-                            }
+                        let t = 1; // 봉우리라면 1
+                        //토글변수는 어떤 상황이 발생하면 1
+                        // 발생하지 않으면 초기화 상태인 0
+                        for(let k=0;k<initCol.length;k++){
+                            let x = i+initRow[k];
+                            let y = j+initCol[k];
+                            if(x>=0 && x<arr.length && y>=0 && y<arr.length && arr[x][y]>=arr[i][j]) {t=0; break;} 
+                            // 1. 12시 방향부터 크거나 같으면 봉우리 아님
+                            // 1. 3시, 6시 9시 방향 볼 필요 없이 멈춰버림
+                            // 3. arr[0][0]인 경우 arr[x][y]에 -1이 들어감
+                            // 3. x, y는 적어도 0부터 시작해야하고
+                            // 3. arr[x][y]의 범위도 arr.length보다 작아야 한다는 범위 설정해줌
                         }
-                        if(toggle) answer++;
+                        if(t) answer++;
+                        // 2. 만약에 토글변수가 0 (변하지 않음)
+                        // 2. 위의 경우에 해당하지 않음 = 봉우리임
+                        // 2. answer에 축적
                     }
                 }
                 return answer;

@@ -6,13 +6,14 @@
     <body>
         <script>
             function solution(arr){         
-                let answer=0, cnt=0; //cnt : +1되는 누적 값
+                let answer=0, cnt=0; //cnt : 증가값
                 for(let i=0;i<arr.length;i++){
-                    if(arr[i]==1) cnt++;
-                    else cnt=0;
-                    answer += cnt;
+                    if(arr[i]==1) cnt++; //정답인 경우 1점, 연속 정답인 경우에 1점씩 늘어나니까 증가시켜줌
+                    else cnt=0; // 정답이 아닌 경우는 0점
+                    answer += cnt; // answer에 1+0+1+2+3+0+0+1+2+0이 모두 합산된 결과가 나옴.
                 }
                 return answer;
+
             }
 
             let arr=[1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
