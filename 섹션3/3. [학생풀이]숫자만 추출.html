@@ -6,9 +6,54 @@
     <body>
         <script>
             function solution(str){
+                let answer = "";
+                const number = str.replace(/[^0-9]/g, "");
+                answer = parseInt(number)
+                return answer;
+            }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+<!-- for 반복문을 사용하는 경우 -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
                 let answer="";
-              
+                for(let i=0;i<str.length;i++){
+                    if(!isNaN(str[i]))answer+=str[i];
+                }
                 return parseInt(answer);
+            }
+            
+            let str="g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+<!-- parseInt 사용하지 않는 경우 -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str){
+                let answer = 0;
+                for(let i=0;i<str.length;i++){
+                    if(!isNaN(str[i]))answer=answer*10+Number(str[i])
+                }
+                return answer;
             }
             
             let str="g0en2T0s8eSoft";
