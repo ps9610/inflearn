@@ -7,20 +7,20 @@
         <script>
             function solution(s){
                 let answer="";
-                let cnt=1;
-                s=s+" ";
-                for(let i=0; i<s.length-1; i++){
+                let cnt = 1;
+                s = s + " "; //s[10]===s[11]이 성립하지 않음을 증명
+                for(let i=0;i<s.length-1;i++){ // 위에서 s 뒤에 공백 문자열을 넣었기 때문에 -1해줌
                     if(s[i]===s[i+1]) cnt++;
                     else{
-                        answer+=s[i];
-                        if(cnt>1) answer+=String(cnt);
+                        answer += s[i];
+                        if(cnt>1) answer += String(cnt);
                         cnt=1;
                     }
                 }
                 return answer;
             }
             
-            let str="KKHSSSSSSSE";
+            let str="KKHSSSSSSSE"; 
             console.log(solution(str));
         </script>
     </body>
